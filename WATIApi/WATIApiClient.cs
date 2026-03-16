@@ -1,9 +1,13 @@
 using System.Text.Json;
 using RestSharp;
 using RestSharp.Serializers.Json;
+using WATIApi.Actions;
 
 namespace WATIApi {
     public interface IWATIApiClient {
+        ICampaignActions Campaigns { get; }
+        IChannelActions Channels { get; }
+        IChatbotActions Chatbots { get; }
     }
 
     public class WATIApiClient : IWATIApiClient {
@@ -17,5 +21,9 @@ namespace WATIApi {
             client.AddDefaultHeader("Accept", "application/json");
             client.AddDefaultHeader("Authorization", $"Bearer {accessToken}");
         }
+
+        public ICampaignActions Campaigns => new CampaignActions(client);
+        public IChannelActions Channels => new ChannelActions(client);
+        public IChatbotActions Chatbots => new ChatbotActions(client);
     }
 }
