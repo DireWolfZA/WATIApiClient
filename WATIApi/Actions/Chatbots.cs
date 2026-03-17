@@ -5,8 +5,8 @@ using WATIApi.Utils;
 
 namespace WATIApi.Actions {
     public interface IChatbotActions {
-        Task<GetChatbotListResponse> GetChatbots(int pageNumber = 1, int pageSize = 100);
-        Task<StartChatbotResponse> StartChatbot(StartChatbotRequest requestData);
+        Task<GetChatbotListResponse> Get(int pageNumber = 1, int pageSize = 100);
+        Task<StartChatbotResponse> Start(StartChatbotRequest requestData);
     }
 
     public class ChatbotActions : IChatbotActions {
@@ -16,7 +16,7 @@ namespace WATIApi.Actions {
         }
 
         //https://docs.wati.io/reference/get_api-ext-v3-chatbots
-        public async Task<GetChatbotListResponse> GetChatbots(int pageNumber = 1, int pageSize = 100) {
+        public async Task<GetChatbotListResponse> Get(int pageNumber = 1, int pageSize = 100) {
             var request = new RestRequest("chatbots", Method.Get)
                 .AddParameter("page_number", pageNumber)
                 .AddParameter("page_size", pageSize);
@@ -25,7 +25,7 @@ namespace WATIApi.Actions {
         }
 
         //https://docs.wati.io/reference/post_api-ext-v3-chatbots-start
-        public async Task<StartChatbotResponse> StartChatbot(StartChatbotRequest requestData) {
+        public async Task<StartChatbotResponse> Start(StartChatbotRequest requestData) {
             var request = new RestRequest("chatbots/start", Method.Post)
                 .AddJsonBody(requestData);
 

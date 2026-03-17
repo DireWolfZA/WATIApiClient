@@ -10,7 +10,7 @@ namespace WATIApi.Models {
     [DataContract(Name = "BroadcastDetailsDto")]
     public partial class BroadcastDetails {
         /// <summary>
-        /// Initializes a new instance of the <see cref="BroadcastDetailsDto" /> class.
+        /// Initializes a new instance of the <see cref="BroadcastDetails" /> class.
         /// </summary>
         /// <param name="id">The identifier of the broadcast.</param>
         /// <param name="channelID">The identifier of the channel associated with the broadcast.</param>
@@ -22,7 +22,7 @@ namespace WATIApi.Models {
         /// <param name="lastUpdated">The last updated timestamp of the broadcast.</param>
         /// <param name="scheduledAt">The scheduled time for the broadcast.</param>
         /// <param name="statistics">statistics.</param>
-        public BroadcastDetails(string? id = null, string? channelID = null, string? name = null, string? status = null, string? templateID = null, List<FallbackTemplate>? fallbackTemplates = null, DateTime created = default, DateTime lastUpdated = default, DateTime scheduledAt = default, BroadcastStatistics statistics = default) {
+        public BroadcastDetails(string? id = null, string? channelID = null, string? name = null, string? status = null, string? templateID = null, List<FallbackTemplate>? fallbackTemplates = null, DateTime created = default, DateTime lastUpdated = default, DateTime scheduledAt = default, BroadcastStatistics? statistics = null) {
             this.ID = id;
             this.ChannelID = channelID;
             this.Name = name;
@@ -32,7 +32,7 @@ namespace WATIApi.Models {
             this.Created = created;
             this.LastUpdated = lastUpdated;
             this.ScheduledAt = scheduledAt;
-            this.Statistics = statistics;
+            this.Statistics = statistics ?? throw new ArgumentNullException(nameof(statistics));
         }
 
         /// <summary>

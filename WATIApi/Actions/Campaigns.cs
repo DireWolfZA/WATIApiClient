@@ -6,9 +6,9 @@ using WATIApi.Utils;
 
 namespace WATIApi.Actions {
     public interface ICampaignActions {
-        Task<GetBroadcastsResponse> GetCampaigns(int pageNumber = 1, int pageSize = 100, string? channel = null);
-        Task<BroadcastDetails> GetCampaignDetails(string broadcastID);
-        Task<GetBroadcastRecipientsResponse> GetCampaignRecipients(string broadcastID, int pageNumber = 1, int pageSize = 100);
+        Task<GetBroadcastsResponse> Get(int pageNumber = 1, int pageSize = 100, string? channel = null);
+        Task<BroadcastDetails> GetDetails(string broadcastID);
+        Task<GetBroadcastRecipientsResponse> GetRecipients(string broadcastID, int pageNumber = 1, int pageSize = 100);
         Task<GetBroadcastsOverviewResponse> GetCampaignsOverview(DateTime dateFrom, DateTime dateTo, string? channel = null, string? searchString = null);
     }
 
@@ -19,7 +19,7 @@ namespace WATIApi.Actions {
         }
 
         //https://docs.wati.io/reference/get_api-ext-v3-broadcasts
-        public async Task<GetBroadcastsResponse> GetCampaigns(int pageNumber = 1, int pageSize = 100, string? channel = null) {
+        public async Task<GetBroadcastsResponse> Get(int pageNumber = 1, int pageSize = 100, string? channel = null) {
             var request = new RestRequest("broadcasts", Method.Get)
                 .AddParameter("page_number", pageNumber)
                 .AddParameter("page_size", pageSize);
@@ -30,7 +30,7 @@ namespace WATIApi.Actions {
         }
 
         //https://docs.wati.io/reference/get_api-ext-v3-broadcasts-broadcast-id
-        public async Task<BroadcastDetails> GetCampaignDetails(string broadcastID) {
+        public async Task<BroadcastDetails> GetDetails(string broadcastID) {
             Utils.Utils.RequireArgument(nameof(broadcastID), broadcastID);
             var request = new RestRequest($"broadcasts/{broadcastID}", Method.Get);
 
@@ -38,7 +38,7 @@ namespace WATIApi.Actions {
         }
 
         //https://docs.wati.io/reference/get_api-ext-v3-broadcasts-broadcast-id-recipients
-        public async Task<GetBroadcastRecipientsResponse> GetCampaignRecipients(string broadcastID, int pageNumber = 1, int pageSize = 100) {
+        public async Task<GetBroadcastRecipientsResponse> GetRecipients(string broadcastID, int pageNumber = 1, int pageSize = 100) {
             Utils.Utils.RequireArgument(nameof(broadcastID), broadcastID);
             var request = new RestRequest($"broadcasts/{broadcastID}/recipients", Method.Get)
                 .AddParameter("page_number", pageNumber)

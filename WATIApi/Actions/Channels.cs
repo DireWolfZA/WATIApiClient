@@ -5,7 +5,7 @@ using WATIApi.Utils;
 
 namespace WATIApi.Actions {
     public interface IChannelActions {
-        Task<GetChannelsResponse> GetChannels(int pageNumber = 1, int pageSize = 100);
+        Task<GetChannelsResponse> Get(int pageNumber = 1, int pageSize = 100);
     }
 
     public class ChannelActions : IChannelActions {
@@ -15,7 +15,7 @@ namespace WATIApi.Actions {
         }
 
         //https://docs.wati.io/reference/get_api-ext-v3-broadcasts-overview
-        public async Task<GetChannelsResponse> GetChannels(int pageNumber = 1, int pageSize = 100) {
+        public async Task<GetChannelsResponse> Get(int pageNumber = 1, int pageSize = 100) {
             var request = new RestRequest("channels", Method.Get)
                 .AddParameter("page_number", pageNumber)
                 .AddParameter("page_size", pageSize);
