@@ -8,6 +8,7 @@ namespace WATIApi {
         ICampaignActions Campaigns { get; }
         IChannelActions Channels { get; }
         IChatbotActions Chatbots { get; }
+        IContactActions Contacts { get; }
     }
 
     public class WATIApiClient : IWATIApiClient {
@@ -25,5 +26,6 @@ namespace WATIApi {
         public ICampaignActions Campaigns => new CampaignActions(client);
         public IChannelActions Channels => new ChannelActions(client);
         public IChatbotActions Chatbots => new ChatbotActions(client);
+        public IContactActions Contacts => new ContactActions(client);
     }
 }
