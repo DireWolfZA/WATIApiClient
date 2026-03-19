@@ -10,6 +10,7 @@ namespace WATIApi {
         IChatbotActions Chatbots { get; }
         IContactActions Contacts { get; }
         IConversationActions Conversations { get; }
+        IMessageTemplateActions MessageTemplates { get; }
     }
 
     public class WATIApiClient : IWATIApiClient {
@@ -29,5 +30,6 @@ namespace WATIApi {
         public IChatbotActions Chatbots => new ChatbotActions(client);
         public IContactActions Contacts => new ContactActions(client);
         public IConversationActions Conversations => new ConversationActions(client);
+        public IMessageTemplateActions MessageTemplates => new MessageTemplateActions(client);
     }
 }
