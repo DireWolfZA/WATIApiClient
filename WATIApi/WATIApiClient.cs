@@ -11,6 +11,7 @@ namespace WATIApi {
         IContactActions Contacts { get; }
         IConversationActions Conversations { get; }
         IMessageTemplateActions MessageTemplates { get; }
+        ISalesAnalyticsActions SalesAnalytics { get; }
     }
 
     public class WATIApiClient : IWATIApiClient {
@@ -31,5 +32,6 @@ namespace WATIApi {
         public IContactActions Contacts => new ContactActions(client);
         public IConversationActions Conversations => new ConversationActions(client);
         public IMessageTemplateActions MessageTemplates => new MessageTemplateActions(client);
+        public ISalesAnalyticsActions SalesAnalytics => new SalesAnalyticsActions(client);
     }
 }
