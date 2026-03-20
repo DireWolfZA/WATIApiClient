@@ -31,7 +31,7 @@ namespace WATIApi.Actions {
 
         //https://docs.wati.io/reference/get_api-ext-v3-broadcasts-broadcast-id
         public async Task<BroadcastDetails> GetDetails(string broadcastID) {
-            Utils.Utils.RequireArgument(nameof(broadcastID), broadcastID);
+            Utils.Utils.RequireArgument(broadcastID);
             var request = new RestRequest($"broadcasts/{broadcastID}", Method.Get);
 
             return RestResponseHandler.Handle(await client.ExecuteAsync<BroadcastDetails>(request, Method.Get));
@@ -39,7 +39,7 @@ namespace WATIApi.Actions {
 
         //https://docs.wati.io/reference/get_api-ext-v3-broadcasts-broadcast-id-recipients
         public async Task<GetBroadcastRecipientsResponse> GetRecipients(string broadcastID, int pageNumber = 1, int pageSize = 100) {
-            Utils.Utils.RequireArgument(nameof(broadcastID), broadcastID);
+            Utils.Utils.RequireArgument(broadcastID);
             var request = new RestRequest($"broadcasts/{broadcastID}/recipients", Method.Get)
                 .AddParameter("page_number", pageNumber)
                 .AddParameter("page_size", pageSize);

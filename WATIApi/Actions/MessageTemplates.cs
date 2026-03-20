@@ -20,6 +20,7 @@ namespace WATIApi.Actions {
 
         //https://docs.wati.io/reference/get_api-ext-v3-messagetemplates-template-id
         public async Task<MessageTemplate> GetOne(string templateID) {
+            Utils.Utils.RequireArgument(templateID);
             var request = new RestRequest($"messageTemplates/{templateID}", Method.Get);
 
             return RestResponseHandler.Handle(await client.ExecuteAsync<MessageTemplate>(request, Method.Get));

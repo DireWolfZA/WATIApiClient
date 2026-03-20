@@ -17,8 +17,8 @@ namespace WATIApi {
     public class WATIApiClient : IWATIApiClient {
         private readonly RestClient client;
 
-        public WATIApiClient(string accessToken) {
-            Utils.Utils.RequireArgument(nameof(accessToken), string.IsNullOrWhiteSpace(accessToken) ? null : accessToken);
+        public WATIApiClient([System.Diagnostics.CodeAnalysis.AllowNull] string accessToken) {
+            Utils.Utils.RequireStringArgument(accessToken);
 
             client = new RestClient("https://live-mt-server.wati.io/api/ext/v3", configureSerialization: config => config.UseSystemTextJson(new JsonSerializerOptions(JsonSerializerDefaults.Web)));
 

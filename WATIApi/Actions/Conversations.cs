@@ -32,6 +32,7 @@ namespace WATIApi.Actions {
         //https://docs.wati.io/reference/get_api-ext-v3-conversations-target-messages
         /// <inheritdoc/>
         public async Task<GetMessagesByConversationIDResponse> Get(string target, int pageNumber = 1, int pageSize = 100) {
+            Utils.Utils.RequireArgument(target);
             var request = new RestRequest($"conversations/{target}/messages", Method.Get)
                 .AddParameter("page_number", pageNumber)
                 .AddParameter("page_size", pageSize);
@@ -73,6 +74,7 @@ namespace WATIApi.Actions {
 
         //https://docs.wati.io/reference/get_api-ext-v3-conversations-messages-file-message-id
         public async Task<(string? ContentType, byte[] Contents, string? FileName)> GetMediaFile(string messageID) {
+            Utils.Utils.RequireArgument(messageID);
             var request = new RestRequest($"conversations/messages/file/{messageID}", Method.Get);
 
             return RestResponseHandler.HandleRaw(await client.ExecuteAsync(request, Method.Get));
@@ -81,6 +83,7 @@ namespace WATIApi.Actions {
         //https://docs.wati.io/reference/put_api-ext-v3-conversations-target-operator
         /// <inheritdoc/>
         public async Task<AssignConversationOperatorResponse> AssignOperator(string target, AssignConversationOperatorRequest requestData) {
+            Utils.Utils.RequireArgument(target);
             var request = new RestRequest($"conversations/{target}/operator", Method.Put)
                 .AddJsonBody(requestData);
 
@@ -89,6 +92,7 @@ namespace WATIApi.Actions {
 
         //https://docs.wati.io/reference/put_api-ext-v3-conversations-target-status
         public async Task<UpdateConversationStatusResponse> UpdateStatus(string target, UpdateConversationStatusRequest requestData) {
+            Utils.Utils.RequireArgument(target);
             var request = new RestRequest($"conversations/{target}/status", Method.Put)
                 .AddJsonBody(requestData);
 

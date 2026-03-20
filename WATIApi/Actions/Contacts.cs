@@ -54,6 +54,7 @@ namespace WATIApi.Actions {
         //https://docs.wati.io/reference/get_api-ext-v3-contacts-target
         /// <inheritdoc/>
         public async Task<Contact> GetOne(string target) {
+            Utils.Utils.RequireArgument(target);
             var request = new RestRequest($"contacts/{target}", Method.Get);
 
             return RestResponseHandler.Handle(await client.ExecuteAsync<Contact>(request, Method.Get));
