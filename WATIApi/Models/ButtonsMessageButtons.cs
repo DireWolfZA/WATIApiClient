@@ -6,15 +6,7 @@ namespace WATIApi.Models {
     /// Represents a button in the buttons message.
     /// </summary>
     [DataContract(Name = "ButtonsMessageButtonsDto")]
-    public partial class ButtonsMessageButtons {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ButtonsMessageButtons" /> class.
-        /// </summary>
-        /// <param name="text">text.</param>
-        public ButtonsMessageButtons(string? text = null) {
-            this.Text = text;
-        }
-
+    public class ButtonsMessageButtons {
         /// <summary>
         /// Gets or Sets Text
         /// </summary>

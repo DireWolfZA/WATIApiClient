@@ -7,7 +7,7 @@ namespace WATIApi.Models {
     /// Response model for getting sales pipeline.
     /// </summary>
     [DataContract(Name = "GetSalesPipelineResponse")]
-    public partial class GetSalesPipelineResponse {
+    public class GetSalesPipelineResponse {
         /// <summary>
         /// The overall win rate as a percentage.
         /// </summary>

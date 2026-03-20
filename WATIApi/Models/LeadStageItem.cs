@@ -6,7 +6,7 @@ namespace WATIApi.Models {
     /// Represents a lead stage item.
     /// </summary>
     [DataContract(Name = "LeadStageItemDto")]
-    public partial class LeadStageItem {
+    public class LeadStageItem {
         /// <summary>
         /// The unique identifier of the lead stage.
         /// </summary>

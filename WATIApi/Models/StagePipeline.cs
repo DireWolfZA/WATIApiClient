@@ -6,7 +6,7 @@ namespace WATIApi.Models {
     /// Represents a stage pipeline entry.
     /// </summary>
     [DataContract(Name = "StagePipelineDto")]
-    public partial class StagePipeline {
+    public class StagePipeline {
         /// <summary>
         /// The name of the stage.
         /// </summary>

@@ -7,11 +7,11 @@ namespace WATIApi.Models {
     /// Represents a button component for a message template.
     /// </summary>
     [DataContract(Name = "ButtonMessageTemplateComponentDto")]
-    public partial class ButtonMessageTemplateComponent {
+    public class ButtonMessageTemplateComponent {
         /// <summary>
         /// Initializes a new instance of the <see cref="ButtonMessageTemplateComponent" /> class.
         /// </summary>
-        /// <param name="type">The type of button component..</param>
+        /// <param name="type">The type of button component.</param>
         /// <param name="varParameter">varParameter.</param>
         public ButtonMessageTemplateComponent(string? type = null, ButtonMessageTemplateComponentParameter? parameter = null) {
             this.Type = type;
@@ -21,10 +21,8 @@ namespace WATIApi.Models {
         /// <summary>
         /// The type of button component.
         /// </summary>
-        /// <value>The type of button component.</value>
         [JsonPropertyName("type")]
         public string? Type { get; set; }
-
         /// <summary>
         /// Gets or Sets Parameter
         /// </summary>

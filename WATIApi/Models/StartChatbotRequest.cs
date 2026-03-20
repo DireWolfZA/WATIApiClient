@@ -6,7 +6,7 @@ namespace WATIApi.Models {
     /// Request model for starting a chatbot.
     /// </summary>
     [DataContract(Name = "StartChatbotRequest")]
-    public partial class StartChatbotRequest {
+    public class StartChatbotRequest {
         /// <summary>
         /// Initializes a new instance of the <see cref="StartChatbotRequest" /> class.
         /// </summary>
@@ -32,7 +32,6 @@ namespace WATIApi.Models {
         /// </summary>
         [JsonPropertyName("target")]
         public string Target { get; set; }
-
         /// <summary>
         /// Chatbot ID.
         /// </summary>

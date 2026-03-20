@@ -6,11 +6,10 @@ namespace WATIApi.Models {
     /// Response model for getting contact count.
     /// </summary>
     [DataContract(Name = "GetContactCountResponse")]
-    public partial class GetContactCountResponse {
+    public class GetContactCountResponse {
         /// <summary>
         /// The contact count.
         /// </summary>
-        /// <value>The contact count.</value>
         [JsonPropertyName("contact_count")]
         public long ContactCount { get; set; }
     }

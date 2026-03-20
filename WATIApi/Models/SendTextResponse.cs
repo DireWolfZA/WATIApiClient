@@ -6,11 +6,10 @@ namespace WATIApi.Models {
     /// Response model for sending a text message.
     /// </summary>
     [DataContract(Name = "SendTextResponse")]
-    public partial class SendTextResponse {
+    public class SendTextResponse {
         /// <summary>
         /// Initializes a new instance of the <see cref="SendTextResponse" /> class.
         /// </summary>
-        /// <param name="message">message.</param>
         public SendTextResponse(ConversationEvent message) {
             this.Message = message;
         }

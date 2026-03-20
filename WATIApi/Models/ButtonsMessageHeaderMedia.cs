@@ -6,7 +6,7 @@ namespace WATIApi.Models {
     /// Represents media information inside the header.
     /// </summary>
     [DataContract(Name = "ButtonsMessageHeaderMediaDto")]
-    public partial class ButtonsMessageHeaderMedia {
+    public class ButtonsMessageHeaderMedia {
         /// <summary>
         /// Initializes a new instance of the <see cref="ButtonsMessageHeaderMedia" /> class.
         /// </summary>
@@ -25,7 +25,6 @@ namespace WATIApi.Models {
         /// </summary>
         [JsonPropertyName("url")]
         public string? URL { get; set; }
-
         /// <summary>
         /// Gets or Sets FileName
         /// </summary>

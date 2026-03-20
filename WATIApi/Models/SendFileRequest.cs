@@ -6,7 +6,7 @@ namespace WATIApi.Models {
     /// Request model for sending a file message.
     /// </summary>
     [DataContract(Name = "SendFileRequest")]
-    public partial class SendFileRequest {
+    public class SendFileRequest {
         /// <summary>
         /// Initializes a new instance of the <see cref="SendFileRequest" /> class.
         /// </summary>
@@ -18,7 +18,7 @@ namespace WATIApi.Models {
         /// </param>
         /// <param name="fileContents">File to send. (required). <see href="https://support.wati.io/en/articles/11463010-supported-media-types-and-sizes-in-wati"/></param>
         /// <param name="fileStream">File to send. (required). <see href="https://support.wati.io/en/articles/11463010-supported-media-types-and-sizes-in-wati"/></param>
-        /// <param name="caption">Optional caption for the file..</param>
+        /// <param name="caption">Optional caption for the file.</param>
         public SendFileRequest(string target, string fileName, RestSharp.ContentType contentType, byte[]? fileContents = null, System.IO.Stream? fileStream = null, string? caption = null) {
             this.Target = target ?? throw new ArgumentNullException(nameof(target));
             this.FileName = fileName ?? throw new ArgumentNullException(nameof(fileName));
@@ -38,7 +38,6 @@ namespace WATIApi.Models {
 
         public string FileName { get; set; }
         public RestSharp.ContentType ContentType { get; set; }
-
         /// <summary>
         /// File to send. <see href="https://support.wati.io/en/articles/11463010-supported-media-types-and-sizes-in-wati"/>
         /// </summary>
@@ -47,7 +46,6 @@ namespace WATIApi.Models {
         /// File to send. <see href="https://support.wati.io/en/articles/11463010-supported-media-types-and-sizes-in-wati"/>
         /// </summary>
         public System.IO.Stream? FileStream { get; set; }
-
         /// <summary>
         /// Optional caption for the file.
         /// </summary>

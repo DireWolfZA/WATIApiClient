@@ -7,7 +7,7 @@ namespace WATIApi.Models {
     /// Represents an interactive message.
     /// </summary>
     [DataContract(Name = "SendInteractiveMessageRequest")]
-    public partial class SendInteractiveMessageRequest {
+    public class SendInteractiveMessageRequest {
         /// <summary>
         /// Initializes a new instance of the <see cref="SendInteractiveMessageRequest" /> class.
         /// </summary>
@@ -35,19 +35,16 @@ namespace WATIApi.Models {
         /// </summary>
         [JsonPropertyName("target")]
         public string Target { get; set; }
-
         /// <summary>
         /// Message type: &quot;buttons&quot; or &quot;list&quot;.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }
-
         /// <summary>
         /// Represents a message with buttons in a conversation.
         /// </summary>
         [JsonPropertyName("button_message")]
         public ButtonsMessage? ButtonMessage { get; set; }
-
         /// <summary>
         /// Represents a list type message in a conversation.
         /// </summary>

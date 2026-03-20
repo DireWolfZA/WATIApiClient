@@ -7,11 +7,11 @@ namespace WATIApi.Models {
     /// Response model for getting updated contacts.
     /// </summary>
     [DataContract(Name = "UpdateContactsResponse")]
-    public partial class UpdateContactsResponse {
+    public class UpdateContactsResponse {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateContactsResponse" /> class.
         /// </summary>
-        /// <param name="contactList">The list of contact..</param>
+        /// <param name="contactList">The list of contact.</param>
         public UpdateContactsResponse(List<Contact> contactList) {
             this.ContactList = contactList;
         }
@@ -19,7 +19,6 @@ namespace WATIApi.Models {
         /// <summary>
         /// The list of contact.
         /// </summary>
-        /// <value>The list of contact.</value>
         [JsonPropertyName("contact_list")]
         public List<Contact> ContactList { get; set; }
     }

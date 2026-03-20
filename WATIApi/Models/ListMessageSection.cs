@@ -7,7 +7,7 @@ namespace WATIApi.Models {
     /// Represents a section in the list message.
     /// </summary>
     [DataContract(Name = "ListMessageSectionDto")]
-    public partial class ListMessageSection {
+    public class ListMessageSection {
         /// <summary>
         /// Initializes a new instance of the <see cref="ListMessageSection" /> class.
         /// </summary>
@@ -23,7 +23,6 @@ namespace WATIApi.Models {
         /// </summary>
         [JsonPropertyName("title")]
         public string? Title { get; set; }
-
         /// <summary>
         /// Gets or Sets Rows
         /// </summary>

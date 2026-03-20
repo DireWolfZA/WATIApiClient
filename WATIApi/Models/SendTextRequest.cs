@@ -7,7 +7,7 @@ namespace WATIApi.Models {
     /// Request model for sending a text message.
     /// </summary>
     [DataContract(Name = "SendTextRequest")]
-    public partial class SendTextRequest {
+    public class SendTextRequest {
         /// <summary>
         /// Initializes a new instance of the <see cref="SendTextRequest" /> class.
         /// </summary>
@@ -31,11 +31,9 @@ namespace WATIApi.Models {
         /// </summary>
         [JsonPropertyName("target")]
         public string Target { get; set; }
-
         /// <summary>
         /// Message content.
         /// </summary>
-        /// <value>Message content.</value>
         [JsonPropertyName("text")]
         public string Text { get; set; }
     }

@@ -8,7 +8,7 @@ namespace WATIApi.Models {
     /// Request model for updating contacts.
     /// </summary>
     [DataContract(Name = "UpdateContactsRequest")]
-    public partial class UpdateContactsRequest {
+    public class UpdateContactsRequest {
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateContactsRequest" /> class.
         /// </summary>
@@ -20,7 +20,6 @@ namespace WATIApi.Models {
         /// <summary>
         /// List of contacts to update.
         /// </summary>
-        /// <value>List of contacts to update.</value>
         [JsonPropertyName("contacts")]
         public List<UpdateContactRequest> Contacts { get; set; }
     }

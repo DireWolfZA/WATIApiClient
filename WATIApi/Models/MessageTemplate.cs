@@ -8,36 +8,36 @@ namespace WATIApi.Models {
     /// Represents a message template with its configuration and parameters.
     /// </summary>
     [DataContract(Name = "MessageTemplateDto")]
-    public partial class MessageTemplate {
+    public class MessageTemplate {
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageTemplate" /> class.
         /// </summary>
-        /// <param name="id">The unique identifier of the message template..</param>
-        /// <param name="name">The name of the message template..</param>
-        /// <param name="category">The category of the template..</param>
-        /// <param name="subCategory">The subcategory of the template..</param>
+        /// <param name="id">The unique identifier of the message template.</param>
+        /// <param name="name">The name of the message template.</param>
+        /// <param name="category">The category of the template.</param>
+        /// <param name="subCategory">The subcategory of the template.</param>
         /// <param name="catalogInfo">catalogInfo.</param>
-        /// <param name="hsm">The HSM (Highly Structured Message) content..</param>
-        /// <param name="hsmOriginal">The original HSM content..</param>
-        /// <param name="customParams">The list of custom parameters associated with this template..</param>
-        /// <param name="status">The current status of the template..</param>
+        /// <param name="hsm">The HSM (Highly Structured Message) content.</param>
+        /// <param name="hsmOriginal">The original HSM content.</param>
+        /// <param name="customParams">The list of custom parameters associated with this template.</param>
+        /// <param name="status">The current status of the template.</param>
         /// <param name="languageOption">languageOption.</param>
-        /// <param name="lastModified">The last modification date of the template..</param>
-        /// <param name="type">The type of the message template..</param>
+        /// <param name="lastModified">The last modification date of the template.</param>
+        /// <param name="type">The type of the message template.</param>
         /// <param name="header">header.</param>
-        /// <param name="body">The body content of the template..</param>
-        /// <param name="bodyOriginal">The original body content of the template..</param>
-        /// <param name="footer">The footer content of the template..</param>
-        /// <param name="buttons">The list of button components..</param>
-        /// <param name="buttonsType">The type of buttons used in the template..</param>
-        /// <param name="carouselCards">The list of carousel cards for the template..</param>
-        /// <param name="expiresIn">Expiration time in seconds..</param>
-        /// <param name="includeExpiryTime">Whether to include expiry time..</param>
-        /// <param name="addSecurityRecommendation">Whether to add security recommendation..</param>
-        /// <param name="isUrlBtnClickTrackingEnabled">Whether URL button click tracking is enabled..</param>
+        /// <param name="body">The body content of the template.</param>
+        /// <param name="bodyOriginal">The original body content of the template.</param>
+        /// <param name="footer">The footer content of the template.</param>
+        /// <param name="buttons">The list of button components.</param>
+        /// <param name="buttonsType">The type of buttons used in the template.</param>
+        /// <param name="carouselCards">The list of carousel cards for the template.</param>
+        /// <param name="expiresIn">Expiration time in seconds.</param>
+        /// <param name="includeExpiryTime">Whether to include expiry time.</param>
+        /// <param name="addSecurityRecommendation">Whether to add security recommendation.</param>
+        /// <param name="isUrlBtnClickTrackingEnabled">Whether URL button click tracking is enabled.</param>
         /// <param name="limitedTimeOffer">limitedTimeOffer.</param>
-        /// <param name="quality">The quality rating of the template..</param>
-        /// <param name="creationMethod">The method used to create the template..</param>
+        /// <param name="quality">The quality rating of the template.</param>
+        /// <param name="creationMethod">The method used to create the template.</param>
         public MessageTemplate(string? id = null, string? name = null, string? category = null, string? subCategory = null, CatalogInfo? catalogInfo = null, string? hsm = null, string? hsmOriginal = null, List<TemplateParameter>? customParams = null, string? status = null, LanguageOption? languageOption = null, DateTime lastModified = default, string? type = null, HeaderMessageTemplateComponent? header = default, string? body = null, string? bodyOriginal = null, string? footer = null, List<ButtonMessageTemplateComponent>? buttons = null, string? buttonsType = null, List<CarouselMessageTemplateViewModel>? carouselCards = null, int expiresIn = default, bool includeExpiryTime = default, bool addSecurityRecommendation = default, bool isUrlBtnClickTrackingEnabled = default, LimitedTimeOffer? limitedTimeOffer = null, string? quality = null, string? creationMethod = null) {
             this.ID = id;
             this.Name = name;

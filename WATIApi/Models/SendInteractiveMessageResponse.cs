@@ -6,7 +6,7 @@ namespace WATIApi.Models {
     /// Response model for sending an interactive message.
     /// </summary>
     [DataContract(Name = "SendInteractiveMessageResponse")]
-    public partial class SendInteractiveMessageResponse {
+    public class SendInteractiveMessageResponse {
         /// <summary>
         /// Initializes a new instance of the <see cref="SendInteractiveMessageResponse" /> class.
         /// </summary>

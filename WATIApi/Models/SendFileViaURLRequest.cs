@@ -7,7 +7,7 @@ namespace WATIApi.Models {
     /// Request model for sending a file message.
     /// </summary>
     [DataContract(Name = "SendFileViaUrlRequest")]
-    public partial class SendFileViaURLRequest {
+    public class SendFileViaURLRequest {
         /// <summary>
         /// Initializes a new instance of the <see cref="SendFileViaURLRequest" /> class.
         /// </summary>
@@ -18,7 +18,7 @@ namespace WATIApi.Models {
         /// <br />* &#x60;Channel:PhoneNumber&#x60;: A combination of the channel (name or phone number) and the recipient&#39;s phone number (e.g., &#x60;MyChannel:1415552671&#x60;, &#x60;123456789:1415552671&#x60;).
         /// </param>
         /// <param name="fileUrl">File to send. (required).</param>
-        /// <param name="caption">Optional caption for the file..</param>
+        /// <param name="caption">Optional caption for the file.</param>
         public SendFileViaURLRequest(string target, string fileUrl, string? caption = null) {
             this.Target = target ?? throw new ArgumentNullException(nameof(target));
             this.FileURL = fileUrl ?? throw new ArgumentNullException(nameof(fileUrl));
@@ -33,18 +33,14 @@ namespace WATIApi.Models {
         /// </summary>
         [JsonPropertyName("target")]
         public string Target { get; set; }
-
         /// <summary>
         /// File to send.
         /// </summary>
-        /// <value>File to send.</value>
         [JsonPropertyName("file_url")]
         public string FileURL { get; set; }
-
         /// <summary>
         /// Optional caption for the file.
         /// </summary>
-        /// <value>Optional caption for the file.</value>
         [JsonPropertyName("caption")]
         public string? Caption { get; set; }
     }

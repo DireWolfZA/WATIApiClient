@@ -7,7 +7,7 @@ namespace WATIApi.Models {
     /// Response model for getting lead stages.
     /// </summary>
     [DataContract(Name = "GetLeadStagesResponse")]
-    public partial class GetLeadStagesResponse {
+    public class GetLeadStagesResponse {
         /// <summary>
         /// The list of lead stages.
         /// </summary>

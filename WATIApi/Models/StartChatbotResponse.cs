@@ -6,11 +6,11 @@ namespace WATIApi.Models {
     /// Response model for starting a chatbot.
     /// </summary>
     [DataContract(Name = "StartChatbotResponse")]
-    public partial class StartChatbotResponse {
+    public class StartChatbotResponse {
         /// <summary>
         /// Initializes a new instance of the <see cref="StartChatbotResponse" /> class.
         /// </summary>
-        /// <param name="result">Result of the chatbot start operation..</param>
+        /// <param name="result">Result of the chatbot start operation.</param>
         public StartChatbotResponse(bool result = default) {
             this.Result = result;
         }
@@ -18,7 +18,6 @@ namespace WATIApi.Models {
         /// <summary>
         /// Result of the chatbot start operation.
         /// </summary>
-        /// <value>Result of the chatbot start operation.</value>
         [JsonPropertyName("result")]
         public bool Result { get; set; }
     }

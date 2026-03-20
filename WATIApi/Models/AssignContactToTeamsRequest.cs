@@ -7,7 +7,7 @@ namespace WATIApi.Models {
     /// Request model for assigning a contact to teams.
     /// </summary>
     [DataContract(Name = "AssignContactToTeamsRequest")]
-    public partial class AssignContactToTeamsRequest {
+    public class AssignContactToTeamsRequest {
         /// <param name="target">
         /// The target contact in the following formats:
         /// <br />* &#x60;ContactID&#x60;: The unique ID of a contact.
@@ -28,7 +28,6 @@ namespace WATIApi.Models {
         /// </summary>
         [JsonPropertyName("target")]
         public string Target { get; set; }
-
         /// <summary>
         /// List of teams to assign.
         /// </summary>

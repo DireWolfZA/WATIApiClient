@@ -8,7 +8,7 @@ namespace WATIApi.Models {
     /// Represents a list type message in a conversation.
     /// </summary>
     [DataContract(Name = "ListMessageDto")]
-    public partial class ListMessage {
+    public class ListMessage {
         /// <summary>
         /// Initializes a new instance of the <see cref="ListMessage" /> class.
         /// </summary>
@@ -30,25 +30,21 @@ namespace WATIApi.Models {
         /// </summary>
         [JsonPropertyName("header")]
         public string? Header { get; set; }
-
         /// <summary>
         /// Gets or Sets Body
         /// </summary>
         [JsonPropertyName("body")]
         public string Body { get; set; }
-
         /// <summary>
         /// Gets or Sets Footer
         /// </summary>
         [JsonPropertyName("footer")]
         public string? Footer { get; set; }
-
         /// <summary>
         /// Gets or Sets ButtonText
         /// </summary>
         [JsonPropertyName("button_text")]
         public string? ButtonText { get; set; }
-
         /// <summary>
         /// Gets or Sets Sections
         /// </summary>

@@ -7,55 +7,30 @@ namespace WATIApi.Models {
     /// Represents a base conversation event.
     /// </summary>
     [DataContract(Name = "ConversationEventDto")]
-    public partial class ConversationEvent {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConversationEvent" /> class.
-        /// </summary>
-        /// <param name="id">The unique identifier of the conversation event..</param>
-        /// <param name="created">The creation timestamp of the event..</param>
-        /// <param name="conversationID">The associated conversation identifier..</param>
-        /// <param name="ticketID">The associated ticket identifier..</param>
-        /// <param name="eventType">The type of event (e.g., message, ticket, broadcast)..</param>
-        public ConversationEvent(string? id = null, DateTime created = default, string? conversationID = null, string? ticketID = null, string? eventType = null) {
-            this.ID = id;
-            this.Created = created;
-            this.ConversationID = conversationID;
-            this.TicketID = ticketID;
-            this.EventType = eventType;
-        }
-
+    public class ConversationEvent {
         /// <summary>
         /// The unique identifier of the conversation event.
         /// </summary>
-        /// <value>The unique identifier of the conversation event.</value>
         [JsonPropertyName("id")]
         public string? ID { get; set; }
-
         /// <summary>
         /// The creation timestamp of the event.
         /// </summary>
-        /// <value>The creation timestamp of the event.</value>
         [JsonPropertyName("created")]
         public DateTime Created { get; set; }
-
         /// <summary>
         /// The associated conversation identifier.
         /// </summary>
-        /// <value>The associated conversation identifier.</value>
         [JsonPropertyName("conversation_id")]
         public string? ConversationID { get; set; }
-
         /// <summary>
         /// The associated ticket identifier.
         /// </summary>
-        /// <value>The associated ticket identifier.</value>
         [JsonPropertyName("ticket_id")]
         public string? TicketID { get; set; }
-
         /// <summary>
         /// The type of event (e.g., message, ticket, broadcast).
         /// </summary>
-        /// <value>The type of event (e.g., message, ticket, broadcast).</value>
         [JsonPropertyName("event_type")]
         public string? EventType { get; set; }
 

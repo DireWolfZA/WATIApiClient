@@ -8,7 +8,7 @@ namespace WATIApi.Models {
     /// Represents a detailed broadcast object.
     /// </summary>
     [DataContract(Name = "BroadcastDetailsDto")]
-    public partial class BroadcastDetails {
+    public class BroadcastDetails {
         /// <summary>
         /// Initializes a new instance of the <see cref="BroadcastDetails" /> class.
         /// </summary>
@@ -38,66 +38,48 @@ namespace WATIApi.Models {
         /// <summary>
         /// The identifier of the broadcast
         /// </summary>
-        /// <value>The identifier of the broadcast</value>
         [JsonPropertyName("id")]
         public string? ID { get; set; }
-
         /// <summary>
         /// The identifier of the channel associated with the broadcast
         /// </summary>
-        /// <value>The identifier of the channel associated with the broadcast</value>
         [JsonPropertyName("channel_id")]
         public string? ChannelID { get; set; }
-
         /// <summary>
         /// The name of the broadcast
         /// </summary>
-        /// <value>The name of the broadcast</value>
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-
         /// <summary>
         /// The status of the broadcast
         /// </summary>
-        /// <value>The status of the broadcast</value>
         [JsonPropertyName("status")]
         public string? Status { get; set; }
-
         /// <summary>
         /// The identifier of the message template used in the broadcast
         /// </summary>
-        /// <value>The identifier of the message template used in the broadcast</value>
         [JsonPropertyName("template_id")]
         public string? TemplateID { get; set; }
-
         /// <summary>
         /// The fallback templates used in the broadcast
         /// </summary>
-        /// <value>The fallback templates used in the broadcast</value>
         [JsonPropertyName("fallback_templates")]
         public List<FallbackTemplate>? FallbackTemplates { get; set; }
-
         /// <summary>
         /// The creation timestamp of the broadcast
         /// </summary>
-        /// <value>The creation timestamp of the broadcast</value>
         [JsonPropertyName("created")]
         public DateTime Created { get; set; }
-
         /// <summary>
         /// The last updated timestamp of the broadcast
         /// </summary>
-        /// <value>The last updated timestamp of the broadcast</value>
         [JsonPropertyName("last_updated")]
         public DateTime LastUpdated { get; set; }
-
         /// <summary>
         /// The scheduled time for the broadcast
         /// </summary>
-        /// <value>The scheduled time for the broadcast</value>
         [JsonPropertyName("scheduled_at")]
         public DateTime ScheduledAt { get; set; }
-
         /// <summary>
         /// Gets or Sets Statistics
         /// </summary>

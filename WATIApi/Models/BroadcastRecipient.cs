@@ -8,7 +8,7 @@ namespace WATIApi.Models {
     /// Represents a broadcast recipient.
     /// </summary>
     [DataContract(Name = "BroadcastRecipientDto")]
-    public partial class BroadcastRecipient {
+    public class BroadcastRecipient {
         /// <summary>
         /// Initializes a new instance of the <see cref="BroadcastRecipient" /> class.
         /// </summary>
@@ -38,70 +38,51 @@ namespace WATIApi.Models {
         /// <summary>
         /// The identifier of the broadcast recipient
         /// </summary>
-        /// <value>The identifier of the broadcast recipient</value>
         [JsonPropertyName("id")]
         public string? ID { get; set; }
-
         /// <summary>
         /// The identifier of the contact associated with the recipient
         /// </summary>
-        /// <value>The identifier of the contact associated with the recipient</value>
         [JsonPropertyName("contact_id")]
         public string? ContactID { get; set; }
-
         /// <summary>
         /// The name of the contact
         /// </summary>
-        /// <value>The name of the contact</value>
         [JsonPropertyName("contact_name")]
         public string? ContactName { get; set; }
-
         /// <summary>
         /// The phone number of the contact
         /// </summary>
-        /// <value>The phone number of the contact</value>
         [JsonPropertyName("contact_phone")]
         public string? ContactPhone { get; set; }
-
         /// <summary>
         /// The status of the broadcast recipient
         /// </summary>
-        /// <value>The status of the broadcast recipient</value>
         [JsonPropertyName("status")]
         public string? Status { get; set; }
-
         /// <summary>
         /// The failure code if the message failed to send
         /// </summary>
-        /// <value>The failure code if the message failed to send</value>
         [JsonPropertyName("failed_code")]
         public string? FailedCode { get; set; }
-
         /// <summary>
         /// The local message identifier
         /// </summary>
-        /// <value>The local message identifier</value>
         [JsonPropertyName("local_message_id")]
         public string? LocalMessageID { get; set; }
-
         /// <summary>
         /// The message identifier from the messaging platform
         /// </summary>
-        /// <value>The message identifier from the messaging platform</value>
         [JsonPropertyName("message_id")]
         public string? MessageID { get; set; }
-
         /// <summary>
         /// The custom parameters associated with the recipient
         /// </summary>
-        /// <value>The custom parameters associated with the recipient</value>
         [JsonPropertyName("custom_params")]
         public List<CustomParam>? CustomParams { get; set; }
-
         /// <summary>
         /// The creation timestamp of the broadcast recipient
         /// </summary>
-        /// <value>The creation timestamp of the broadcast recipient</value>
         [JsonPropertyName("created")]
         public DateTime Created { get; set; }
     }

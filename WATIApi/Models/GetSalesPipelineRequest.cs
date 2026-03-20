@@ -8,7 +8,7 @@ namespace WATIApi.Models {
     /// Request model for getting the sales pipeline.
     /// </summary>
     [DataContract(Name = "GetSalesPipelineRequest")]
-    public partial class GetSalesPipelineRequest {
+    public class GetSalesPipelineRequest {
         /// <summary>
         /// The start date to get the sales pipeline in ISO 8601 format of UTC timezone.
         /// </summary>
