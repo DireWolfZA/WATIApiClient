@@ -3,4 +3,4 @@ API Client for the WATI v3 WhatsApp API
 - API Documentation: https://docs.wati.io/reference
 - OpenAPI Spec (Login Required) & API Key: https://live.wati.io/api-docs (select Version 3)
 - OpenAPI JSON Spec: https://live-mt-server.wati.io/swagger/v3/swagger.json (Requires header: `Referer: https://live.wati.io/`)
-- NuGet package: https://www.nuget.org/packages/DireWolf.WATIApiClient
+- NuGet package: https://www.nuget.org/packages/DireWolf.WATIApi
