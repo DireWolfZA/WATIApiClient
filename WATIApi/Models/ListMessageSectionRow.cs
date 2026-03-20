@@ -8,16 +8,6 @@ namespace WATIApi.Models {
     [DataContract(Name = "ListMessageSectionRowDto")]
     public class ListMessageSectionRow {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListMessageSectionRow" /> class.
-        /// </summary>
-        /// <param name="title">title.</param>
-        /// <param name="description">description.</param>
-        public ListMessageSectionRow(string? title = null, string? description = null) {
-            this.Title = title;
-            this.Description = description;
-        }
-
-        /// <summary>
         /// Gets or Sets Title
         /// </summary>
         [JsonPropertyName("title")]

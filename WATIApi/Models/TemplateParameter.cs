@@ -8,16 +8,6 @@ namespace WATIApi.Models {
     [DataContract(Name = "TemplateParameterDto")]
     public class TemplateParameter {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TemplateParameter" /> class.
-        /// </summary>
-        /// <param name="name">The name of the template parameter.</param>
-        /// <param name="value">The value of the template parameter.</param>
-        public TemplateParameter(string? name = null, string? value = null) {
-            this.Name = name;
-            this.Value = value;
-        }
-
-        /// <summary>
         /// The name of the template parameter.
         /// </summary>
         [JsonPropertyName("name")]

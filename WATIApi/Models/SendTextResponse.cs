@@ -8,16 +8,9 @@ namespace WATIApi.Models {
     [DataContract(Name = "SendTextResponse")]
     public class SendTextResponse {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SendTextResponse" /> class.
-        /// </summary>
-        public SendTextResponse(ConversationEvent message) {
-            this.Message = message;
-        }
-
-        /// <summary>
         /// Gets or Sets Message
         /// </summary>
         [JsonPropertyName("message")]
-        public ConversationEvent Message { get; set; }
+        public required ConversationEvent Message { get; set; }
     }
 }

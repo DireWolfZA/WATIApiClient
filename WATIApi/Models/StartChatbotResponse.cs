@@ -8,14 +8,6 @@ namespace WATIApi.Models {
     [DataContract(Name = "StartChatbotResponse")]
     public class StartChatbotResponse {
         /// <summary>
-        /// Initializes a new instance of the <see cref="StartChatbotResponse" /> class.
-        /// </summary>
-        /// <param name="result">Result of the chatbot start operation.</param>
-        public StartChatbotResponse(bool result = default) {
-            this.Result = result;
-        }
-
-        /// <summary>
         /// Result of the chatbot start operation.
         /// </summary>
         [JsonPropertyName("result")]

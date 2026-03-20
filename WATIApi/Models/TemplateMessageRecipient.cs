@@ -10,18 +10,6 @@ namespace WATIApi.Models {
     [DataContract(Name = "TemplateMessageRecipientDto")]
     public class TemplateMessageRecipient {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TemplateMessageRecipient" /> class.
-        /// </summary>
-        /// <param name="phoneNumber">The recipient&#39;s phone number. (required).</param>
-        /// <param name="localMessageID">The local message identifier.</param>
-        /// <param name="customParams">A list of custom parameters to be used in the template message.</param>
-        public TemplateMessageRecipient(string phoneNumber, string? localMessageID = null, List<TemplateParameter>? customParams = null) {
-            this.PhoneNumber = phoneNumber ?? throw new ArgumentNullException(nameof(phoneNumber));
-            this.LocalMessageID = localMessageID;
-            this.CustomParams = customParams;
-        }
-
-        /// <summary>
         /// The recipient&#39;s phone number.
         /// </summary>
         [JsonPropertyName("phone_number")]

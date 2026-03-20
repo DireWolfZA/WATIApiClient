@@ -11,6 +11,6 @@ namespace WATIApi.Models {
         /// Assign result
         /// </summary>
         [JsonPropertyName("result")]
-        public bool Result { get; set; }
+        public required bool Result { get; set; }
     }
 }

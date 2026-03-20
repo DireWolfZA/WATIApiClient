@@ -9,16 +9,6 @@ namespace WATIApi.Models {
     [DataContract(Name = "ButtonMessageTemplateComponentDto")]
     public class ButtonMessageTemplateComponent {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ButtonMessageTemplateComponent" /> class.
-        /// </summary>
-        /// <param name="type">The type of button component.</param>
-        /// <param name="varParameter">varParameter.</param>
-        public ButtonMessageTemplateComponent(string? type = null, ButtonMessageTemplateComponentParameter? parameter = null) {
-            this.Type = type;
-            this.Parameter = parameter ?? throw new ArgumentNullException(nameof(parameter));
-        }
-
-        /// <summary>
         /// The type of button component.
         /// </summary>
         [JsonPropertyName("type")]
@@ -27,6 +17,6 @@ namespace WATIApi.Models {
         /// Gets or Sets Parameter
         /// </summary>
         [JsonPropertyName("parameter")]
-        public ButtonMessageTemplateComponentParameter Parameter { get; set; }
+        public required ButtonMessageTemplateComponentParameter Parameter { get; set; }
     }
 }

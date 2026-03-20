@@ -10,32 +10,6 @@ namespace WATIApi.Models {
     [DataContract(Name = "BroadcastDetailsDto")]
     public class BroadcastDetails {
         /// <summary>
-        /// Initializes a new instance of the <see cref="BroadcastDetails" /> class.
-        /// </summary>
-        /// <param name="id">The identifier of the broadcast.</param>
-        /// <param name="channelID">The identifier of the channel associated with the broadcast.</param>
-        /// <param name="name">The name of the broadcast.</param>
-        /// <param name="status">The status of the broadcast.</param>
-        /// <param name="templateID">The identifier of the message template used in the broadcast.</param>
-        /// <param name="fallbackTemplates">The fallback templates used in the broadcast.</param>
-        /// <param name="created">The creation timestamp of the broadcast.</param>
-        /// <param name="lastUpdated">The last updated timestamp of the broadcast.</param>
-        /// <param name="scheduledAt">The scheduled time for the broadcast.</param>
-        /// <param name="statistics">statistics.</param>
-        public BroadcastDetails(string? id = null, string? channelID = null, string? name = null, string? status = null, string? templateID = null, List<FallbackTemplate>? fallbackTemplates = null, DateTime created = default, DateTime lastUpdated = default, DateTime scheduledAt = default, BroadcastStatistics? statistics = null) {
-            this.ID = id;
-            this.ChannelID = channelID;
-            this.Name = name;
-            this.Status = status;
-            this.TemplateID = templateID;
-            this.FallbackTemplates = fallbackTemplates;
-            this.Created = created;
-            this.LastUpdated = lastUpdated;
-            this.ScheduledAt = scheduledAt;
-            this.Statistics = statistics ?? throw new ArgumentNullException(nameof(statistics));
-        }
-
-        /// <summary>
         /// The identifier of the broadcast
         /// </summary>
         [JsonPropertyName("id")]
@@ -84,6 +58,6 @@ namespace WATIApi.Models {
         /// Gets or Sets Statistics
         /// </summary>
         [JsonPropertyName("statistics")]
-        public BroadcastStatistics Statistics { get; set; }
+        public required BroadcastStatistics Statistics { get; set; }
     }
 }

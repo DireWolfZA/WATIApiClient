@@ -9,18 +9,6 @@ namespace WATIApi.Models {
     [DataContract(Name = "CatalogInfoDto")]
     public class CatalogInfo {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CatalogInfo" /> class.
-        /// </summary>
-        /// <param name="catalogID">The catalog identifier.</param>
-        /// <param name="thumbnailProduct">Represents a catalog product.</param>
-        /// <param name="isActive">Whether the catalog is active.</param>
-        public CatalogInfo(string? catalogID = null, CatalogProduct? thumbnailProduct = null, bool isActive = default) {
-            this.CatalogID = catalogID;
-            this.ThumbnailProduct = thumbnailProduct ?? throw new ArgumentNullException(nameof(thumbnailProduct));
-            this.IsActive = isActive;
-        }
-
-        /// <summary>
         /// The catalog identifier.
         /// </summary>
         [JsonPropertyName("catalog_id")]
@@ -29,7 +17,7 @@ namespace WATIApi.Models {
         /// Represents a catalog product.
         /// </summary>
         [JsonPropertyName("thumbnail_product")]
-        public CatalogProduct ThumbnailProduct { get; set; }
+        public required CatalogProduct ThumbnailProduct { get; set; }
         /// <summary>
         /// Whether the catalog is active.
         /// </summary>
