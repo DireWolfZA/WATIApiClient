@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/session-message-sent
+    /// <summary>Select `Session Message Sent v2` event type</summary>
     public class SessionMessageSent : IWATIEventWithMessageID {
         /// <summary>
         /// The type of webhook event being triggered
@@ -78,5 +79,14 @@ namespace WATIApi.Webhooks {
         /// </summary>
         [JsonPropertyName("waId")]
         public string? WA_ID { get; set; }
+
+        // not in WATI Webhook Schema...
+
+        [JsonPropertyName("localMessageId")]
+        public string? LocalMessageID { get; set; }
+        [JsonPropertyName("chatbotTriggeredEventId")]
+        public string? ChatbotTriggeredEventID { get; set; }
+        [JsonPropertyName("replyContextId")]
+        public object? ReplyContextID { get; set; }
     }
 }

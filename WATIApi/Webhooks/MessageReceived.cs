@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/message-received
+    /// <summary>Select `Message Received` event type</summary>
     public class MessageReceived : IWATIEventWithMessageID {
         /// <summary>
         /// Unique identifier for the message record
