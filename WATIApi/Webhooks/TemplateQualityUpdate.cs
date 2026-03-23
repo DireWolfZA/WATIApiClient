@@ -28,24 +28,39 @@ namespace WATIApi.Webhooks {
         /// </summary>
         [JsonPropertyName("watiTemplateId")]
         public string? WATITemplateID { get; set; }
+
         /// <summary>
         /// The previous quality rating of the template before the update.
-        /// <br />0. UNKNOWN - Indicates quality pending.
-        /// <br />1. GREEN - Indicates high quality.
-        /// <br />2. RED - Indicates low quality.
-        /// <br />3. YELLOW - Indicates medium quality.
         /// </summary>
         [JsonPropertyName("oldTemplateQuality")]
-        public int? OldTemplateQuality { get; set; }
+        public EOldTemplateQuality? OldTemplateQuality { get; set; }
+        public enum EOldTemplateQuality : int {
+            /// <summary>Indicates quality pending.</summary>
+            Unknown = 0,
+            /// <summary>Indicates high quality.</summary>
+            Green = 1,
+            /// <summary>Indicates low quality.</summary>
+            Red = 2,
+            /// <summary>Indicates medium quality.</summary>
+            Yellow = 3,
+        }
+
         /// <summary>
         /// The updated quality rating of the template.
-        /// <br />1. UNKNOWN - Indicates quality pending.
-        /// <br />2. GREEN - Indicates high quality.
-        /// <br />3. RED - Indicates low quality.
-        /// <br />0. YELLOW - Indicates medium quality.
         /// </summary>
         [JsonPropertyName("newTemplateQuality")]
         public int? NewTemplateQuality { get; set; }
+        public enum ENewTemplateQuality : int {
+            ///<summary>Indicates quality pending.</summary>
+            Unknown = 1,
+            ///<summary>Indicates high quality.</summary>
+            Green = 2,
+            ///<summary>Indicates low quality.</summary>
+            Red = 3,
+            ///<summary>Indicates medium quality.</summary>
+            Yellow = 0,
+        }
+
         /// <summary>
         /// The identifier of the channel associated with the template. Can be null if not applicable.
         /// </summary>

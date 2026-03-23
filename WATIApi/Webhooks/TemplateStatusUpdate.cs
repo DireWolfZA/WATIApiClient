@@ -29,31 +29,15 @@ namespace WATIApi.Webhooks {
         [JsonPropertyName("watiTemplateId")]
         public string? WATITemplateID { get; set; }
         /// <summary>
-        /// The previous status of the template before the update. See status codes below.
-        /// <br />1.DRAFT,
-        /// <br />2.PENDING,
-        /// <br />3.APPROVED,
-        /// <br />4.REJECTED,
-        /// <br />5.DELETED,
-        /// <br />6.PENDING_INTERNAL,
-        /// <br />7.DISABLED,
-        /// <br />8.PAUSED
+        /// The previous status of the template before the update.
         /// </summary>
         [JsonPropertyName("oldTemplateStatus")]
-        public int? OldTemplateStatus { get; set; }
+        public TemplateStatus? OldTemplateStatus { get; set; }
         /// <summary>
-        /// The updated status of the template after the review. See status codes below.
-        /// <br />1.DRAFT,
-        /// <br />2.PENDING,
-        /// <br />3.APPROVED,
-        /// <br />4.REJECTED,
-        /// <br />5.DELETED,
-        /// <br />6.PENDING_INTERNAL,
-        /// <br />7.DISABLED,
-        /// <br />8.PAUSED
+        /// The updated status of the template after the review.
         /// </summary>
         [JsonPropertyName("newTemplateStatus")]
-        public int? NewTemplateStatus { get; set; }
+        public TemplateStatus? NewTemplateStatus { get; set; }
         /// <summary>
         /// Channel identifier. May be null if not applicable.
         /// </summary>
@@ -64,5 +48,16 @@ namespace WATIApi.Webhooks {
         /// </summary>
         [JsonPropertyName("channelPhoneNumber")]
         public string? ChannelPhoneNumber { get; set; }
+    }
+
+    public enum TemplateStatus : int {
+        Draft = 1,
+        Pending = 2,
+        Approved = 3,
+        Rejected = 4,
+        Deleted = 5,
+        PendingInternal = 6,
+        Disabled = 7,
+        Paused = 8,
     }
 }
