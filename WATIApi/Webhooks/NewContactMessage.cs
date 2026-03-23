@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
@@ -18,7 +19,7 @@ namespace WATIApi.Webhooks {
         /// Timestamp when the message was received, in UTC format
         /// </summary>
         [JsonPropertyName("created")]
-        public string? Created { get; set; }
+        public DateTime? Created { get; set; }
         /// <summary>
         /// WhatsApp ID or phone number of the message sender
         /// </summary>

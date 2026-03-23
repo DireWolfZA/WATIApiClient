@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
@@ -13,7 +14,7 @@ namespace WATIApi.Webhooks {
         /// ISO 8601 timestamp when the message was created in the system
         /// </summary>
         [JsonPropertyName("created")]
-        public string? Created { get; set; }
+        public DateTime? Created { get; set; }
         /// <summary>
         /// WhatsApp's unique message identifier (WAMID)
         /// </summary>
@@ -119,11 +120,19 @@ namespace WATIApi.Webhooks {
         /// </summary>
         [JsonPropertyName("interactiveButtonReply")]
         public object? InteractiveButtonReply { get; set; }
+
         /// <summary>
         /// Data for quick reply button responses
         /// </summary>
         [JsonPropertyName("buttonReply")]
-        public object? ButtonReply { get; set; }
+        public ButtonReplyClass? ButtonReply { get; set; }
+        public class ButtonReplyClass {
+            [JsonPropertyName("payload")]
+            public string? Payload { get; set; }
+            [JsonPropertyName("text")]
+            public string? Text { get; set; }
+        }
+
         /// <summary>
         /// Reference ID for the message being replied to (empty if not a reply)
         /// </summary>

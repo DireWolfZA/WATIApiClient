@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
@@ -38,7 +39,7 @@ namespace WATIApi.Webhooks {
         /// Timestamp when the message was created (ISO 8601 format)
         /// </summary>
         [JsonPropertyName("created")]
-        public string? Created { get; set; }
+        public DateTime? Created { get; set; }
         /// <summary>
         /// Unique identifier for the conversation, used to associate all messages within the same conversation
         /// </summary>

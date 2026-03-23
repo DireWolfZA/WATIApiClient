@@ -87,6 +87,6 @@ namespace WATIApi.Webhooks {
         [JsonPropertyName("chatbotTriggeredEventId")]
         public string? ChatbotTriggeredEventID { get; set; }
         [JsonPropertyName("replyContextId")]
-        public object? ReplyContextID { get; set; }
+        public string? ReplyContextID { get; set; }
     }
 }
