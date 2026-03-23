@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/phone-number-deleted
-    public class PhoneNumberDeleted {
+    public class PhoneNumberDeleted : IWATIEventWithWABAID {
         /// <summary>
         /// The type of webhook event. Always set to "phoneNumberDeleted" for this event type.
         /// </summary>

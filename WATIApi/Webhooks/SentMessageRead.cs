@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/send-message-is-read
-    public class SentMessageRead {
+    public class SentMessageRead : IWATIEventWithMessageID {
         /// <summary>
         /// The type of webhook event. Always "sentMessageREAD_v2" for this webhook version
         /// </summary>

@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/waba-account-content-updated
-    public class WABAAccountContentUpdated {
+    public class WABAAccountContentUpdated : IWATIEventWithWABAID {
         /// <summary>
         /// Always set to "accountUpdated" to identify this event type
         /// </summary>

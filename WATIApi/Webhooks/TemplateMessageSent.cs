@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/template-message-sent
-    public class TemplateMessageSent {
+    public class TemplateMessageSent : IWATIEventWithMessageID {
         /// <summary>
         /// Event type, here "templateMessageSent_v2" indicates a template message has been sent (version 2)
         /// </summary>

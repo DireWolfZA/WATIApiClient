@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/new-contact-message
-    public class NewContactMessage {
+    public class NewContactMessage : IWATIEventWithID {
         /// <summary>
         /// Identifies the type of webhook event being triggered
         /// </summary>

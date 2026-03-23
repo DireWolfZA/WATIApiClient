@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/waba-account-deleted
-    public class WABAAccountDeleted {
+    public class WABAAccountDeleted : IWATIEventWithWABAID {
         /// <summary>
         /// The type of webhook event. For WABA status updates, this value is always "accountDeleted"
         /// </summary>

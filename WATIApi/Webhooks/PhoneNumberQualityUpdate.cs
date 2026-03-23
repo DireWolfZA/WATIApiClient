@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/phone-number-quality-update
-    public class PhoneNumberQualityUpdate {
+    public class PhoneNumberQualityUpdate : IWATIEvent {
         /// <summary>
         /// Always set to "PhoneNumberQualityUpdatedEvent" for this webhook type
         /// </summary>

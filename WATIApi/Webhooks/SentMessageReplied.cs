@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/sent-message-is-replied
-    public class SentMessageReplied {
+    public class SentMessageReplied : IWATIEventWithMessageID {
         /// <summary>
         /// The type of webhook event. Always "sentMessageREPLIED_v2" for this event
         /// </summary>

@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/template-status-update
-    public class TemplateStatusUpdate {
+    public class TemplateStatusUpdate : IWATIEventWithWABAID {
         /// <summary>
         /// The type of webhook event. Always "templateReviewed" for this event.
         /// </summary>

@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/template-message-failed
-    public class TemplateMessageFailed {
+    public class TemplateMessageFailed : IWATIEventWithMessageID {
         /// <summary>
         /// The type of webhook event that was triggered
         /// </summary>

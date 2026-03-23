@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/template-quality-update
-    public class TemplateQualityUpdate {
+    public class TemplateQualityUpdate : IWATIEventWithWABAID {
         /// <summary>
         /// The type of webhook event. Always "templateQualityUpdated" for this event.
         /// </summary>

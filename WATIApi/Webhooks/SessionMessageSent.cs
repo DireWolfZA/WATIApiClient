@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WATIApi.Webhooks {
     //https://docs.wati.io/reference/session-message-sent
-    public class SessionMessageSent {
+    public class SessionMessageSent : IWATIEventWithMessageID {
         /// <summary>
         /// The type of webhook event being triggered
         /// </summary>
