@@ -1,24 +1,24 @@
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace WATIApi.Models {
+namespace WATIApi.Models;
+
+/// <summary>
+/// Request model for sending a text message.
+/// </summary>
+[DataContract(Name = "SendTextRequest")]
+public class SendTextRequest {
     /// <summary>
-    /// Request model for sending a text message.
+    /// The target conversation in the following formats:
+    /// <br />* &#x60;ConversationID&#x60;: The unique ID of a conversation.
+    /// <br />* &#x60;PhoneNumber&#x60;: The recipient&#39;s phone number (e.g., &#x60;14155552671&#x60;).
+    /// <br />* &#x60;Channel:PhoneNumber&#x60;: A combination of the channel (name or phone number) and the recipient&#39;s phone number (e.g., &#x60;MyChannel:1415552671&#x60;, &#x60;123456789:1415552671&#x60;).
     /// </summary>
-    [DataContract(Name = "SendTextRequest")]
-    public class SendTextRequest {
-        /// <summary>
-        /// The target conversation in the following formats:
-        /// <br />* &#x60;ConversationID&#x60;: The unique ID of a conversation.
-        /// <br />* &#x60;PhoneNumber&#x60;: The recipient&#39;s phone number (e.g., &#x60;14155552671&#x60;).
-        /// <br />* &#x60;Channel:PhoneNumber&#x60;: A combination of the channel (name or phone number) and the recipient&#39;s phone number (e.g., &#x60;MyChannel:1415552671&#x60;, &#x60;123456789:1415552671&#x60;).
-        /// </summary>
-        [JsonPropertyName("target")]
-        public required string Target { get; set; }
-        /// <summary>
-        /// Message content.
-        /// </summary>
-        [JsonPropertyName("text")]
-        public required string Text { get; set; }
-    }
+    [JsonPropertyName("target")]
+    public required string Target { get; set; }
+    /// <summary>
+    /// Message content.
+    /// </summary>
+    [JsonPropertyName("text")]
+    public required string Text { get; set; }
 }

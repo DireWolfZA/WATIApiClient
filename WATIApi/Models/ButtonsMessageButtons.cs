@@ -1,16 +1,16 @@
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace WATIApi.Models {
+namespace WATIApi.Models;
+
+/// <summary>
+/// Represents a button in the buttons message.
+/// </summary>
+[DataContract(Name = "ButtonsMessageButtonsDto")]
+public class ButtonsMessageButtons {
     /// <summary>
-    /// Represents a button in the buttons message.
+    /// Gets or Sets Text
     /// </summary>
-    [DataContract(Name = "ButtonsMessageButtonsDto")]
-    public class ButtonsMessageButtons {
-        /// <summary>
-        /// Gets or Sets Text
-        /// </summary>
-        [JsonPropertyName("text")]
-        public string? Text { get; set; }
-    }
+    [JsonPropertyName("text")]
+    public string? Text { get; set; }
 }

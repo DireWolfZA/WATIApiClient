@@ -1,16 +1,16 @@
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace WATIApi.Models {
+namespace WATIApi.Models;
+
+/// <summary>
+/// Response model for assigning a conversation operator.
+/// </summary>
+[DataContract(Name = "AssignConversationOperatorResponse")]
+public class AssignConversationOperatorResponse {
     /// <summary>
-    /// Response model for assigning a conversation operator.
+    /// Assign result
     /// </summary>
-    [DataContract(Name = "AssignConversationOperatorResponse")]
-    public class AssignConversationOperatorResponse {
-        /// <summary>
-        /// Assign result
-        /// </summary>
-        [JsonPropertyName("result")]
-        public required bool Result { get; set; }
-    }
+    [JsonPropertyName("result")]
+    public required bool Result { get; set; }
 }

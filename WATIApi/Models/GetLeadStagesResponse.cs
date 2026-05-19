@@ -2,16 +2,16 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace WATIApi.Models {
+namespace WATIApi.Models;
+
+/// <summary>
+/// Response model for getting lead stages.
+/// </summary>
+[DataContract(Name = "GetLeadStagesResponse")]
+public class GetLeadStagesResponse {
     /// <summary>
-    /// Response model for getting lead stages.
+    /// The list of lead stages.
     /// </summary>
-    [DataContract(Name = "GetLeadStagesResponse")]
-    public class GetLeadStagesResponse {
-        /// <summary>
-        /// The list of lead stages.
-        /// </summary>
-        [JsonPropertyName("stages")]
-        public List<LeadStageItem>? Stages { get; set; }
-    }
+    [JsonPropertyName("stages")]
+    public List<LeadStageItem>? Stages { get; set; }
 }

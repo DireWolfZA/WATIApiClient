@@ -1,16 +1,16 @@
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace WATIApi.Models {
+namespace WATIApi.Models;
+
+/// <summary>
+/// Request model for assigning a conversation operator.
+/// </summary>
+[DataContract(Name = "AssignConversationOperatorRequest")]
+public class AssignConversationOperatorRequest {
     /// <summary>
-    /// Request model for assigning a conversation operator.
+    /// Email of the assignee. If not provided, the conversation will be assigned to the bot operator.
     /// </summary>
-    [DataContract(Name = "AssignConversationOperatorRequest")]
-    public class AssignConversationOperatorRequest {
-        /// <summary>
-        /// Email of the assignee. If not provided, the conversation will be assigned to the bot operator.
-        /// </summary>
-        [JsonPropertyName("assignee_email")]
-        public string? AssigneeEmail { get; set; }
-    }
+    [JsonPropertyName("assignee_email")]
+    public string? AssigneeEmail { get; set; }
 }
